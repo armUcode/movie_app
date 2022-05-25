@@ -24,8 +24,7 @@ export class Buscador extends Component {
   render() {
     const { title } = this.state; /*20° Viene de la linea15 */
     return (
-      <div>
-        <h2>Buscador</h2>
+      <div className="pelicula">
         <form className="form-container" onSubmit={(e) => this.handleSubmit(e) /*13° Evitar carga automatica*/}>
           <div>
             <label className="label" htmlFor="title">Película: </label>
@@ -49,7 +48,7 @@ export class Buscador extends Component {
                 }
 
                 return (
-                  <span key={movie.imdbID /*23° Quitamos el error del browser */}>
+                  <h3 key={movie.imdbID /*23° Quitamos el error del browser */}>
                       <Link to={`/movie/${movie.imdbID}` /* 24° Se linkea al componente */}>
                         <p>{movie.Title}</p>
                       </Link>
@@ -59,7 +58,7 @@ export class Buscador extends Component {
                             ()=>this.props.addMovieFavorite(datosPelicula) // 25° llamamos la función despues de conectar
                         }
                       > ♡ </button>
-                  </span>
+                  </h3>
                 )
               })
             }

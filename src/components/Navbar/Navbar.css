@@ -1,5 +1,5 @@
 .navbar {
-  height: 56px;
+  height: 3rem;
   width: 100%;
   top: 0;
   left: 0;
@@ -47,6 +47,7 @@
   width: auto;
   align-items: center;
   color: white;
+  font-size: 1rem;
 }
 
 .list-item a:hover,

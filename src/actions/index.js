@@ -1,4 +1,4 @@
-const { REACT_APP_API_KEY } = process.env
+const { REACT_APP_API_KEY } = process.env //usar tu propia apiKey registrando el usuario en la pagina de IMBD
 
 export function addMovieFavorite(payload){
     return {

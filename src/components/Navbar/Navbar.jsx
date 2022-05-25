@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Route } from "react-router-dom";
+
+
 import Logo from '../../assets/armUcode.png'
 import Buscador from '../Buscador/Buscador';
 
@@ -10,10 +13,12 @@ export default function NavBar() {
     <header className="navbar">
         <div>
         <NavLink exact to="/" >
-            <img src={Logo} width="50" height="50" alt="" />
+            <img src={Logo} width="50" height="50" alt="logo armuCode" />
         </NavLink>
         </div>
-        <span className='title'>Movie app</span>
+
+          <span className='title'>Movie app</span>
+        
         <nav>
             <ul className="list">
                 <li className="list-item">
