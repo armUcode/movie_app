@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../armUcode.png'
+import Logo from '../../assets/armUcode.png'
 import Buscador from '../Buscador/Buscador';
 
 import './Navbar.css';
