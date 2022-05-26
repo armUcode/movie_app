@@ -17,7 +17,7 @@ function rootReducer(state = initialState, action){
   if(action.type === 'GET_MOVIES'){
       return{
           ...state,
-          moviesLoaded: action.payload
+          moviesLoaded: action.payload //entrega el objeto Search de la api al  arreglo moviesLoaded
       };
   }
   if(action.type === 'REMOVE_MOVIE_FAVORITE'){

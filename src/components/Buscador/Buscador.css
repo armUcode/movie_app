@@ -2,14 +2,16 @@
   padding-top: 10px;
 }
 .form-container {
+  margin-inline: 2rem;
+  margin-block: 1rem;
   display:flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
 .form-container button {
-  margin-left: 20px;
+  margin-left: 1rem;
 }
 .label {
-  padding-right: 10px;
+  padding-right: 0.5rem
 }

@@ -22,7 +22,7 @@ export class Buscador extends Component {
   }
 
   render() {
-    const { title } = this.state; /*20° Viene de la linea15 */
+    const { title } = this.state; /*20° Viene de la linea13 */
     return (
       <div className="pelicula">
         <form className="form-container" onSubmit={(e) => this.handleSubmit(e) /*13° Evitar carga automatica*/}>
@@ -36,8 +36,9 @@ export class Buscador extends Component {
               onChange={(e) => this.handleChange(e) /*12° Capturar el input*/} 
             />
           </div>
-          <button type="submit" onClick={()=>this.props.getMovies(title/* 21°viene de la L27 */)
-		  /*15° Conecto el boton a la función que llega por ***PROPS*** y el THIS por ser de CLASE, seteamos por defecto 'club' */}>BUSCAR</button>
+          <button type="submit" onClick={()=>this.props.getMovies(title)/* 21°viene de la L27 */
+		        /*15° Conecto el boton a la función que llega por ***PROPS*** y el THIS por ser de CLASE, seteamos por defecto 'club' */}
+          >BUSCAR</button>
         </form>
         <ul>
             {/* 18° para mostrar las peliculas del buscador*/
@@ -50,8 +51,9 @@ export class Buscador extends Component {
                 return (
                   <h3 key={movie.imdbID /*23° Quitamos el error del browser */}>
                       <Link to={`/movie/${movie.imdbID}` /* 24° Se linkea al componente */}>
-                        <p>{movie.Title}</p>
+                        <span>{movie.Title}</span>
                       </Link>
+                        <span> año:{movie.Year} </span>
 
                       <button 
                         onClick={/*22° creamos la accion add*/
@@ -75,10 +77,10 @@ la segunda nos permite hacer el dispatch de nuestras actions al store
 */
 
 
-function mapStateToProps(state){ /* 16.1° state Le llega desde el connect
+function mapStateToProps(state){ /* 16.1° state Le llega desde el connect convierte en props
 	recibe como parametro state y nos devuelvo un objecto con parte del state que queremos, en este caso usamos la key 'movies' (accedemos a ella en nuestro componente como this.props.movies)
 	*/
-	return {
+	return { // este es el objeto que se convierte en props
 	/*
 		state = 	const initialState = {
 						moviesFavourites: [],

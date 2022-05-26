@@ -14,7 +14,7 @@ export function getMovies(titulo){ //Cada accion devuelve un objeto
       .then(rjson=>{
           dispatch({
               type:'GET_MOVIES',
-              payload: rjson.Search //Search es la información que buscamos dentro del objeto
+              payload: rjson.Search // Search es el objeto que entrega la API (OMDBapi)
           });
       });
   };
