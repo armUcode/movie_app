@@ -18,11 +18,11 @@ export default function NavBar() {
         </div>
 
           <span className='title'>Movie app</span>
+          <Buscador/>
         
         <nav>
             <ul className="list">
-                <li className="list-item">
-                    <NavLink exact to="/" >Home</NavLink>
+                <li className="list-item" >
                     <NavLink to="/favs" >Favoritas</NavLink>
                 </li>
             </ul>

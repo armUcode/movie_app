@@ -36,35 +36,13 @@ export class Buscador extends Component {
               onChange={(e) => this.handleChange(e) /*12° Capturar el input*/} 
             />
           </div>
-          <button type="submit" onClick={()=>this.props.getMovies(title)/* 21°viene de la L27 */
-		        /*15° Conecto el boton a la función que llega por ***PROPS*** y el THIS por ser de CLASE, seteamos por defecto 'club' */}
-          >BUSCAR</button>
+          <Link to='/' >
+            <button type="submit" onClick={()=>this.props.getMovies(title)/* 21°viene de la L27 */
+              /*15° Conecto el boton a la función que llega por ***PROPS*** y el THIS por ser de CLASE, seteamos por defecto 'club' */}
+            >BUSCAR</button>
+          </Link>
         </form>
-        <ul>
-            {/* 18° para mostrar las peliculas del buscador*/
-              this.props.movies.map((movie)=>{
-                const datosPelicula = {
-                  Title: movie.Title,
-                  imdbID: movie.imdbID
-                }
 
-                return (
-                  <h3 key={movie.imdbID /*23° Quitamos el error del browser */}>
-                      <Link to={`/movie/${movie.imdbID}` /* 24° Se linkea al componente */}>
-                        <span>{movie.Title}</span>
-                      </Link>
-                        <span> año:{movie.Year} </span>
-
-                      <button 
-                        onClick={/*22° creamos la accion add*/
-                            ()=>this.props.addMovieFavorite(datosPelicula) // 25° llamamos la función despues de conectar
-                        }
-                      > ♡ </button>
-                  </h3>
-                )
-              })
-            }
-        </ul>
       </div>
     );
   }
@@ -77,7 +55,7 @@ la segunda nos permite hacer el dispatch de nuestras actions al store
 */
 
 
-function mapStateToProps(state){ /* 16.1° state Le llega desde el connect convierte en props
+function mapStateToProps(state){ /* state Le llega desde el connect y se convierte en props para suscribirse
 	recibe como parametro state y nos devuelvo un objecto con parte del state que queremos, en este caso usamos la key 'movies' (accedemos a ella en nuestro componente como this.props.movies)
 	*/
 	return { // este es el objeto que se convierte en props
@@ -89,12 +67,12 @@ function mapStateToProps(state){ /* 16.1° state Le llega desde el connect convi
 					};
 	*/
 		// state: state ---> se conecta al state pero lo adaptamos al ejercicio
-		movies: state.moviesLoaded
+		moviesLoaded: state.moviesLoaded
 	};
 }
 
 /*
-OPCIONAL 17° recibe el dispatch desde el connect
+OPCIONAL 17° recibe el dispatch desde el connect // CAPACIDAD DE DESPACHAR ACCIONES
 function mapDispatchToProps(dispatch){ //OPCIONAL 17° recibe el dispatch desde el connect
 	return {
 		addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
@@ -105,4 +83,4 @@ Y despues se las recibo en el connect en el 2do argumento      ,
 */
 
 // connect recibe:              (state, accionesADespachar)    10.1° ¿ Que acción queremos {getMovies}?
-export default connect(/* 16° */mapStateToProps,	/*mapDispatchToProps=>destructuro*/{ /* 25° conectar función*/addMovieFavorite, getMovies })(Buscador); //11° Conectamos el componente Buscador
+export default connect(/* 16° */mapStateToProps,{ addMovieFavorite, getMovies })(Buscador); //11° Conectamos el componente Buscador             /* 25° conectar función*/

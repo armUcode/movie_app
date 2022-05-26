@@ -14,11 +14,23 @@ export function getMovies(titulo){ //Cada accion devuelve un objeto
       .then(rjson=>{
           dispatch({
               type:'GET_MOVIES',
-              payload: rjson.Search // Search es el objeto que entrega la API (OMDBapi)
+              payload: rjson.Search, // Search es el objeto que entrega la API (OMDBapi)
           });
       });
   };
 }
+
+/* { https://omdbapi.com/?apikey=REACT_APP_API_KEY&s=harry
+    "Search": [
+      {
+        "Title": "Harry Potter and the Deathly Hallows: Part 2",
+        "Year": "2011",
+        "imdbID": "tt1201607",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Harry Potter and the Sorcerer's Stone",... */
 
 export function getMovieDetail(id){
   return function(dispatch){ 
