@@ -1,3 +1,60 @@
 .poster{
-  max-width: 4rem;
+  max-width: 10rem;
+}
+
+.cardMovie{
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: #010A3D;
+  border-radius: 1rem;
+
+  margin: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr 0.5fr;
+
+  position: relative;
+
+  align-self:flex-end;
+  align-items: center;
+
+  background-color:#00A0B0;
+
+  width: 100%;
+  max-width: 25rem;
+}
+
+.nombreMovie{
+  grid-column: 1 / span 1;
+  font-weight: 1400;
+  font-size: 1.5rem;
+  color: #EDC951;
+  padding: 1rem;
+  margin: 0,1rem;
+}
+
+.botonLike{
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background-color: var(--color-maximun-red);
+  color: white;
+
+  border-width: 0rem;
+  border-radius: 0.3rem;
+  font-size: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 250ms;
+
+}
+
+.botonLike:hover {
+  color: white;
+  background-color: #EB6841;
+
 }

@@ -8,24 +8,29 @@ function SearchedMovies(busqueda){
 
   console.log(busqueda)
   return (
-    <>
+    <div>
         {
           busqueda.moviesLoaded.map((movie)=>{
             
             return (
-              <div>
-                <h3 key={movie.imdbID /*23° Quitamos el error del browser */}></h3>
+              <div className="cardMovie">
                 <Link to={`/movie/${movie.imdbID}` /* 24° Se linkea al componente */}>
-                  <span>{movie.Title}</span>
+                  <span className="nombreMovie">
+                    {movie.Title}
+                  </span>      
+                  <span className="nombreMovie"> 
+                    año:{movie.Year} 
+                  </span>
                 </Link>
-                <span> año:{movie.Year} </span>
                 <img className="poster" src={movie.Poster}/>
-                <button>♡</button>
+                <button className="botonLike">♡</button>
+                
+                <h3 key={movie.imdbID /*23° Quitamos el error del browser */}></h3>
               </div>
             )
           })
         }
-    </>
+    </div>
   )
 }
 

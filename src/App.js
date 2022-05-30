@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { Route } from "react-router-dom";
 
+import './index.css'
+
 
 import Buscador from './components/Buscador/Buscador'
 import Movie from "./components/Movie/Movie";

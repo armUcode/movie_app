@@ -1,7 +1,24 @@
 .movie-card {
-  font: 14px/22px "Lato", Arial, sans-serif;
-  color: #A9A8A3;
-  padding: 40px 0;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: rgba(0, 0, 0, 0.496);
+  border-radius: 1rem;
+
+  margin: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr;
+
+  position: relative;
+
+  align-self:flex-end;
+  align-items: center;
+
+  background-color:rgb(203, 201, 201);
+
+  width: 100%;
+  max-width: 25rem;
 }
 
 .container {
