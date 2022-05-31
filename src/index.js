@@ -13,7 +13,7 @@ ReactDOM.render(
   <Provider store={store}> {/*envolvemos a App, para tener acceso a store desde cualquier componente hijo. */}
       <BrowserRouter>
           <App />
-      </BrowserRouter>,
+      </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

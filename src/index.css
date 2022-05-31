@@ -1,10 +1,34 @@
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
 
+:root {
+  --naranja: #EB6841;
+  --orange: var(--naranja);
+
+  --azul: #00A0B0;
+  --blue: var(--azul);
+
+  --cafe: #6A4A3C;
+  --coffee: var(--cafe);
+
+  --rojo: #CC333F;
+  --red:var(--rojo);
+
+  --amarillo: #EDC951;
+  --yellow: var(--amarillo);
+
+  --azul-oscuro: #010A3D;
+  --dark-blue: var(--azul-oscuro)
+}
+
 body {
   margin: 0;
   font-family: 'Cascadia Code', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 code {

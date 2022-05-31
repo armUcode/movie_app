@@ -1,19 +1,13 @@
 .navbar {
-  height: 3rem;
-  width: 100%;
   top: 0;
   left: 0;
   background-color: #010A3D;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
-.navbar nav {
-  height: 100%;
-}
 
 .list {
   margin: 0;
@@ -34,10 +28,11 @@
 }
 
 .list-item a {
-  color: white;
-  height: 100%;
-  padding: 16px 10px;
+  color: var(--yellow);
+  height: 0%;
   border-bottom: 4px solid transparent;
+  position: relative;
+  right: 2rem;
 }
 
 .title {
@@ -46,12 +41,39 @@
   height: 100%;
   width: auto;
   align-items: center;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 1rem;
 }
+
+
 
 .list-item a:hover,
 .list-item a.active {
   background-color: #EB6841;
   color: white;
+  position: relative;
+}
+
+@media screen and (max-width: 576px){
+  .navbar {
+    display: flex;
+    grid-template-columns: repeat(1, 3fr);
+    grid-template-rows: 0.3fr 0.0fr;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--azul-oscuro);
+    flex-wrap: nowrap;
+    align-content: stretch;
+  }
+
+  .list-item a {
+    position: relative;
+    top: 0rem;
+    right: 9rem;
+  }
+
+  .title > input {
+    background-color: #EB6841;
+  }
 }

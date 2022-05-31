@@ -11,8 +11,58 @@
 
 .form-container button {
   margin-left: 1rem;
+  background-color: var(--azul-oscuro);
+  border-color: var(--orange);
+  color: var(--orange);
 }
+
+button a:hover{
+
+  background-color: #EB6841;
+  color: white;
+}
+
+
 .label {
+
   padding-right: 0.5rem;
   color: #00A0B0
+}
+
+.pelicula{
+  padding: 0rem;
+  margin: 0rem;
+}
+
+@media screen and (max-width: 576px){
+
+  .form-container{
+    padding: 0rem;
+  }
+  .form-container button {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--azul-oscuro);
+
+    top:2rem;
+    right: 14rem
+    }
+
+    .label{
+      position: relative;
+      bottom:1rem;
+    }
+
+  input[type="text" i] {
+    position: relative;
+    bottom:1rem;
+    padding: 0.5px 0px;
+    font-size: 0.5rem;
+    max-width: 80%;
+}
+
+
 }

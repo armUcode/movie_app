@@ -1,49 +1,71 @@
-.poster{
-  max-width: 10rem;
+.movies {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  overflow: scroll;
 }
+
 
 .cardMovie{
   border-style: solid;
-  border-width: 0.2rem;
+  border-width: 0.01rem;
   border-color: #010A3D;
-  border-radius: 1rem;
-
-  margin: 1rem;
-
-  display: grid;
+  
+  margin: 0.2rem;
+  padding: 0.1rem;
+  
+  display: flex;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: 1fr 0.5fr;
-
+  grid-template-rows: 0.3fr 0.0fr;
+  
   position: relative;
-
-  align-self:flex-end;
+  
   align-items: center;
-
-  background-color:#00A0B0;
-
+  align-self:flex-start;
+  
+  max-width: 30rem;
+  max-width: 12rem;
   width: 100%;
-  max-width: 25rem;
+}
+
+.cardMovie:hover{
+  background-color: var(--azul-oscuro);
+}
+
+.poster{
+  position: relative;
+  max-width: 10rem;
+  padding-bottom: -0.5rem;
+  padding-inline: 1rem;
+  padding-top: 1rem;
 }
 
 .nombreMovie{
-  grid-column: 1 / span 1;
-  font-weight: 1400;
-  font-size: 1.5rem;
+
+  font-weight: 800;
+  font-size: 1rem;
   color: #EDC951;
-  padding: 1rem;
-  margin: 0,1rem;
+  margin: 0rem;
+  text-align: center;
+  padding-inline: 1rem;
+
+}
+
+.year {
+  text-align: center;
+  font-size: 0.1rem;
 }
 
 .botonLike{
   position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  background-color: var(--color-maximun-red);
-  color: white;
+  right: 0.01rem;
+  top: 0.5rem;
+  color: var(--yellow);
+  background-color: transparent;
 
   border-width: 0rem;
   border-radius: 0.3rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 
   display: flex;
   justify-content: center;
@@ -54,7 +76,15 @@
 }
 
 .botonLike:hover {
-  color: white;
-  background-color: #EB6841;
+  color: var(--orange);
+  background-color: transparent;
+}
+
+@media screen and (max-width: 576px){
+
+  .movies{
+    box-sizing: content-box;
+  }
+
 
 }

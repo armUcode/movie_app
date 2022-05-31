@@ -26,7 +26,7 @@ export class Buscador extends Component {
     return (
       <div className="pelicula">
         <form className="form-container" onSubmit={(e) => this.handleSubmit(e) /*13° Evitar carga automatica*/}>
-          <div>
+          <div className="buscador">
             <label className="label" htmlFor="title">Película: </label>
             <input
               type="text"
