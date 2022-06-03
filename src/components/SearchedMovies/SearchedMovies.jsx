@@ -12,13 +12,13 @@ function SearchedMovies(busqueda){
     <div className="movies">
         {
           busqueda.moviesLoaded.map((movie)=>{
-            const datosPelicula = {
+            const datosPeliculaFav = {
               Title: movie.Title,
               imdbID: movie.imdbID
             }
             
             return (
-                <div className="cardMovie">
+                <div key={movie.imdbID} className="cardMovie">
                   <Link to={`/movie/${movie.imdbID}` /* 24° Se linkea al componente */}>
 
                       <img position='absolute' align className="poster" src={movie.Poster}/>
@@ -28,13 +28,9 @@ function SearchedMovies(busqueda){
                     <div className="year"> 
                       año:{movie.Year} 
                     </div>
-
-                  
-                  <span key={movie.imdbID /*23° Quitamos el error del browser */}></span>
                   </Link>
                   <button className="botonLike"
-                    onClick={/*22° creamos la accion add*/
-                    ()=>movie.addMovieFavorite(datosPelicula) // 25° llamamos la función despues de conectar
+                    onClick={()=>movie.addMovieFavorite(datosPeliculaFav) // 25° llamamos la función despues de conectar
                     }> 
                       <BsFillBookmarkStarFill/> 
                   </button>
@@ -49,6 +45,7 @@ function SearchedMovies(busqueda){
 function mapStateToProps(state){
   return {
     moviesLoaded: state.moviesLoaded
+    
   }
 }
 
